@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-,8">
+    <title>Animation with Angular</title>
+    <link rel="stylesheet" href="../libraries/bootstrap/css/bootstrap.css"/>
+</head>
+<body ng-app="app" ng-controller="AppCtrl as app">
+
+<button id="my-button" class="btn-primary" ng-click="app.fadeIt()">Click to fade</button><br>
+<div class="badge" hide-me="app.isHidden">Fade me</div><br><br>
+
+<button class="btn" ng-click="app.toggle=!app.toggle">Toggle Animation</button><br>
+<div class="toggle badge" ng-if="app.toggle">Some content here</div><br><br>
+
+Note - the animation that's just using the TweenMax library and the animation class seems to be much smoother
+than trying to use a directive.  The directive is pretty cool though because it allows you to
+reuse your logic very easily.  It only appears to be a bug with the fading to visible.
+
+<script type="text/javascript" src="../libraries/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="../libraries/greensock-v12-js/src/uncompressed/TweenMax.js"></script>
+<script type="text/javascript" src="../libraries/angular-1.2.0-rc.2/angular.js"></script>
+<script type="text/javascript" src="../libraries/angular-1.2.0-rc.2/angular-animate.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
